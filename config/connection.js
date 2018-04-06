@@ -1,3 +1,5 @@
+//db username/password 
+require('dotenv').config();
 // require mongoose
 var mongoose = require('mongoose');
 
@@ -6,7 +8,7 @@ var Promise = require('bluebird');
 mongoose.Promise = Promise;
 
 // make the connection
-mongoose.connect("mongodb://localhost/scraper");
+mongoose.connect("mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}");
 var db = mongoose.connection;
 
 // check for error

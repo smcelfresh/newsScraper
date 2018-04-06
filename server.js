@@ -3,7 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var hbs = require('express-handlebars');
-
+require('dotenv').config();
 // Require the routes and use them
 var routes = require('./routes/routes');
 
@@ -29,8 +29,9 @@ app.use(express.static('public'));
 // bring in the routes
 app.use('/', routes);
 
+app.set('port', (process.env.PORT || 1337));
 // set the port
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
 // Start up the express server & listen on port 3000 defined above
 app.listen(port, function() {
 	console.log("App running on port:", port);
