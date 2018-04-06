@@ -1,4 +1,4 @@
-//db username/password 
+//for db username/password to connect to mongoose/mLab
 require('dotenv').config();
 // require mongoose
 var mongoose = require('mongoose');
