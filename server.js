@@ -29,9 +29,9 @@ app.use(express.static('public'));
 // bring in the routes
 app.use('/', routes);
 
-app.set('port', (process.env.PORT || 3000));
+//app.set('port', (process.env.PORT || 3000));
 // set the port
-//var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 // Start up the express server & listen on port 3000 defined above
 app.listen(port, function() {
 	console.log("App running on port:", port);
