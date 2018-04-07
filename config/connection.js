@@ -8,7 +8,8 @@ var Promise = require('bluebird');
 mongoose.Promise = Promise;
 
 // make the connection
-mongoose.connect("mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}");
+var mongoURIstring = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}`
+mongoose.connect(mongoURIstring);
 var db = mongoose.connection;
 
 // check for error
